@@ -13,7 +13,7 @@ module.exports = {
         bg: colors.gray,
         bgaccent: colors.slate,
         primary: colors.red,
-        brand: "#ff0000"
+        brand: "#e97425"
       },
     },
   },
