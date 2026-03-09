@@ -1,0 +1,72 @@
+{
+  "name": "Chiangmai",
+  "logo": "/images/logo.png",
+
+  "permalink": "chiangmai",
+  "id": "116",
+
+  "city": "Conshohocken, PA",
+  "cuisine": "Thai",
+  "urlCuisine": "thai",
+
+  "address": "108 Fayette Street, Conshohocken, PA 19428",
+  "googleMapembedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.964317924361!2d-94.23255468391041!3d45.551043335664374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b45f8950e2c31f%3A0x6f6cf45b891f8270!2s83%2010th%20Ave%20S%2C%20Waite%20Park%2C%20MN%2056387%2C%20USA!5e0!3m2!1sen!2sin!4v1676975568808!5m2!1sen!2sin",
+  "phone": "610-397-1757",
+  "email": "",
+
+  "downloadAppImage": "/images/phone-download-app-image.jpeg",
+  "iosLink": "",
+  "androidLink": "",
+
+  "facebook": "",
+  "instagram": "",
+  "twitter": "",
+
+  "homeAboutImage1": "/images/about_image_1.jpeg",
+  "homeAboutImage2": "/images/about_image_2.jpeg",
+
+  "aboutPageImage": "/images/about_page_image.jpeg",
+
+  "popularItems": [
+    {
+      "name": "Vegetable Samosa",
+      "image": "/images/samosa.jpeg",
+      "link": "/order-a"
+    },
+    {
+      "name": "Tandoori Chicken",
+      "image": "/images/tandoori_chicken.jpeg",
+      "link": "/order-a"
+    },
+    {
+      "name": "Lamb Chops",
+      "image": "/images/lamb_chops.jpeg",
+      "link": "/order-a"
+    },
+    {
+      "name": "Paneer Tikka Masala",
+      "image": "/images/paneer_tikka.jpeg",
+      "link": "/order-a"
+    }
+  ],
+
+  "loyaltyGraphic": "https://images.squarespace-cdn.com/content/v1/62c6a2d8b3ea5363c76a80d0/b2f6956b-2cbc-4159-8b45-58ae5de2a1e5/Rewards+icon_loyalty+section.png?format=750w",
+
+  "servingCity1": "Conshohocken, PA",
+  "servingCity1Url": "conshohocken",
+
+  "servingCity2": "",
+  "servingCity2Url": "",
+
+  "servingCity3": "",
+  "servingCity3Url": "",
+
+  "servingCity4": "",
+  "servingCity4Url": "",
+
+  "servingCity5": "",
+  "servingCity5Url": "",
+
+  "servingCity6": "",
+  "servingCity6Url": ""
+}

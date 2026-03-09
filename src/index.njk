@@ -1,0 +1,78 @@
+---
+layout: base
+title: Home
+description: add seo description
+tags: homepage
+order: 1
+permalink: "index.html"
+---
+
+{# hero section #}
+
+<section id="banner" class="">
+
+  <div class="relative z-10 max-w-screen-xl mx-auto h-[60vh] flex justify-center flex-col w-full px-6 md:h-[75vh]">
+    <div>
+      <h1 class="text-3xl font-bold mb-9 text-white">{{ restaurant.name }}</h1>
+
+      <a href="/{{ restaurant.urlCuisine }}-food-order-online" class="btn-primary myBtn inline-block shadow-lg">Order Now</a>
+    </div>
+  </div>
+
+</section>
+
+{# sharpspring_form #}
+
+<section id="sharpspring_form" class="bg-bgaccent-100">
+
+  <div class="max-w-screen-xl mx-auto w-full px-6 pt-10 pb-3">
+    <h2 class="text-3xl font-bold mb-5">Sign up for our e-list and get $5.00 off your online order!</h2>
+    <h4 class="mb-5 text-lg font-semibold">After you sign up, check your email for your $5.00 off offer</h4>
+    <div class="form"></div>
+
+  </div>
+
+</section>
+
+{# about section #}
+
+<section id="about" class="">
+
+  <div class="max-w-screen-xl mx-auto w-full px-6 py-16">
+    <div class="flex flex-col gap-7 md:flex-row md:flex-wrap">
+      <div class="flex-1">
+        <h2 class="text-4xl font-bold mb-5">The best {{ restaurant.cuisine }} food in {{ restaurant.city }}</h2>
+        <p class="text-lg">
+          Locally owned and operated, {{ restaurant.name }} serves fresh and
+          delicious {{ restaurant.cuisine }} dishes in {{ restaurant.city }}. We
+          pride ourselves on offering our customers an amazing experience,
+          whether in-house or take out. Our mission is to create the best {{ restaurant.cuisine }}
+          food and provide exceptional service that will leave you feeling
+          satisfied and ready to come back for more.
+        </p>
+        <div class="mt-10">
+          <a href="/{{ restaurant.urlCuisine }}-food-about-us" class="btn-primary inline-block shadow-lg">Learn More</a>
+        </div>
+      </div>
+      <div class="flex-1 md:mt-10 "><img class="w-full rounded-3xl shadow-xl max-h-[450px] object-cover object-center" src="{{ restaurant.homeAboutImage1 }}"></div>
+      <div class="flex-1 hidden md:block"><img class="w-full rounded-3xl shadow-xl max-h-[450px] object-cover object-center" src="{{ restaurant.homeAboutImage2 }}"></div>
+    </div>
+  </div>
+
+</section>
+
+{# Popular Menu Items #}
+
+{% include "partials/popular-items.njk" %}
+
+{# loyalty rewards section #}
+
+{% include "partials/loyalty.njk" %}
+
+{# mobile app download section #}
+
+{% include "partials/download-app.njk" %}
+
+{# review widget section #}
+
+{% include "partials/review.njk" %}

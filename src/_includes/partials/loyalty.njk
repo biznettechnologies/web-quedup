@@ -1,0 +1,24 @@
+<section id="loyalty_rewards" class="bg-gray-100">
+    <div class="max-w-screen-xl mx-auto w-full px-6 py-16">
+        <div class="loyalty-rewards_wrapper flex flex-col-reverse md:flex-row gap-12">
+            <div class="loyalty-content">
+                <h2 class="text-4xl font-bold mb-5">{{ restaurant.name }} Rewards</h2>
+                <p class="text-lg">
+          Turn your orders into rewards by joining the {{ restaurant.name }}
+          Rewards program. Earn points for every order you place through our
+          website or app and use them to unlock rewards. Check out ways to earn
+          bonus points, move up tier levels and collect exclusive rewards.
+        </p>
+                <p class="text-lg mt-5">
+          Not a member yet? Join now to start earning. 
+          <a href="/{{ restaurant.urlCuisine }}-food-order-online/restaurants/{{ restaurant.permalink }}/{{ restaurant.id }}/about-loyalty" class="text-brand font-bold underline">Learn More</a>
+                </p>
+                <div class="mt-7">
+                    <a href="/{{ restaurant.urlCuisine }}-food-order-online/restaurants/{{ restaurant.permalink }}/{{ restaurant.id }}/signup" class="btn-primary inline-block shadow-lg">Join Now</a>
+                </div>
+            </div>
+            <div class="loyalty-image">
+                <img class="w-44 md:w-[500px]" src="{{ restaurant.loyaltyGraphic }}" alt="loyalty-graphic">
+            </div>
+        </div>
+    </section>

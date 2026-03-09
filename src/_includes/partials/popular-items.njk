@@ -1,0 +1,39 @@
+<section id="pop_items" class="relative bg-black">
+    <div class="max-w-screen-xl mx-auto w-full px-6 py-16">
+        
+        <div
+      class=" md:flex md:flex-row justify-between md:items-center"
+    >
+            <div class="text-white">
+                <h2 class="text-4xl font-bold">Popular Items</h2>
+                <p class="mt-5 text-gray-300">Try our most popular items.</p>
+            </div>
+
+            <a href="/{{ restaurant.urlCuisine }}-food-order-online"
+        class="btn-primary inline-block bg-transparent mt-5 md:mt-0 hover:bg-brand hover:border-brand hover:!text-dark !text-white border-2 border-brand"
+        >See More Items</a>
+        </div>
+        <div class="owl-carousel owl-theme md:px-0 gap-8 mt-10 md:gap-8">
+            {% for item in restaurant.popularItems %}
+                <div class="item md:flex-1 bg-white rounded-md shadow-lg">
+                    
+                        <div>
+                            <figure class="">
+                                <img class="rounded-md rounded-b-none" src="{{ item.image }}"/>
+                                <figurecaption
+                class="md:text-lg text-dark font-semibold p-3 md:py-5 block"
+              >
+                                    {{ item.name }}
+                                    <a href="{{ item.link }}">
+                                    <span class="block cursor-pointer text-base py-3 hover:text-red-700"
+                  >Add Item <span class="text-lg inline-block pl-1 align-middle text-red-700">+</span></span
+                ></a>
+                                </figurecaption>
+                            </figure>
+                        </div>
+                    
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

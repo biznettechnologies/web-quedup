@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ site.name }} - {{title}}</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui">
+    <meta name="build.version" content="{{ eleventy.version }}">
+    <meta name="config.version" content="{{ config.version }}">
+    <meta name="description" content="{{ description }}"/>
+
+    {# smart-app-banner app ids need to be added 👇 uncomment when needed #}
+
+    {# <meta name="apple-itunes-app" content="app-id=1151076477">
+    <meta name="google-play-app" content="app-id=com.zuppler.native.chiangmai"> #}
+
+    {# smart-app-banner restaurant logos need to be added 👇 uncomment when needed #}
+
+    {# <link rel="apple-touch-icon" href="** app icon image **">
+    <link rel="android-touch-icon" href="** app icon image **"/> #}
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="{{ '/css/tailwind.css' | url }}">
+
+    {# smart app banner css file 👇 uncomment when needed #}
+
+    {# <link rel="stylesheet" href="{{ '/css/smart-app-banner.css' | url }}"> #}
+
+  </head>
+  <body>
+    {% include "partials/navigation.njk" %}
+    <main class="">
+      {{content | safe}}
+    </main>
+    {% include "partials/footer.njk" %}
+
+    <script src="/js/nav.js"></script>
+
+        {# slider script 👇 #}
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script>
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: true,
+    autoplay: true,
+    autoplayTimeout: 2000,
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 4,
+      },
+    },
+  });
+</script>
+
+    {# smart app banner js files 👇 uncomment when needed #}
+
+    {# <script src="/js/smart_app_banner.js"></script>
+    <script src="/js/mobile_app_details.js"></script> #}
+  </body>
+</html>

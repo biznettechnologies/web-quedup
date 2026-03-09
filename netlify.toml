@@ -1,0 +1,39 @@
+[build]
+  publish = "_site"
+  command = "npm run build"
+
+[[redirects]]
+  from = "/order-a/*"
+  to = "/order-a"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/order-b/*"
+  to = "/order-b"
+  status = 200
+  force = true
+
+[[edge_functions]]
+  function = "sitemap"
+  path = "/sitemap-restaurants.xml"
+
+# ---- order-a ----- 
+
+# [[edge_functions]]
+#   function = "online-ordering"
+#   path = "/order-a/*"
+
+# [[edge_functions]]
+#   function = "online-ordering"
+#   path = "/order-a"
+
+# ---- order-b ----- 
+
+# [[edge_functions]]
+#   function = "online-ordering"
+#   path = "/order-b/*"
+
+# [[edge_functions]]
+#   function = "online-ordering"
+#   path = "/order-b"

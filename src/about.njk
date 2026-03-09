@@ -1,0 +1,93 @@
+---
+layout: base
+title: "About"
+description: add seo description
+tags: page
+order: 1
+eleventyNavigation:
+  key: About
+  order: 1
+---
+
+{# about section #}
+
+<section id="about" class="">
+    <div class="max-w-screen-xl mx-auto w-full px-6 py-16">
+        <div class="flex flex-col gap-7 md:flex-row md:flex-wrap">
+            <div class="flex-1">
+                <h2 class="text-4xl font-bold mb-5">Delicious, Fresh and Flavorful {{ restaurant.cuisine }} food in {{ restaurant.city }}</h2>
+                <p class="text-lg">
+          Get a taste of the best, local {{ restaurant.cuisine}} food in {{
+          restaurant.city}}! {{ restaurant.name}} offers delicious {{
+          restaurant.cuisine}} dishes made with the freshest ingredients.
+          Locally owned and operated, {{ restaurant.name}} prides itself on
+          offering its customers an amazing dining experience. Our mission is to
+          create the best {{ restaurant.cuisine}} food and provide exceptional
+          service that will leave guests feeling satisfied and ready to come
+          back for more.
+          <br/>
+                    <br/>
+          Whether you're joining us in person or looking for a quick bite to go,
+          {{ restaurant.name}} has you covered. We are proud to offer multiple
+          ways for you to enjoy your favorite dishes. Dine in-house or place
+          your order online for easy and fast {{ restaurant.cuisine }} takeout
+          or delivery in {{ restaurant.city }}. You won't be disappointed!
+                </p>
+            </div>
+
+            <div class="flex-1">
+                <img class="w-full rounded-3xl shadow-xl max-h-[450px] object-cover object-center" src="{{ restaurant.aboutPageImage }}">
+            </div>
+        </div>
+    </div>
+</section>
+
+{# cities we serve #}
+
+<section id="cities" class="bg-gray-100">
+    <div class="max-w-screen-xl mx-auto w-full px-6 py-16">
+        <div class="text-center">
+            <h2 class="text-4xl font-bold mb-5">Enjoy the taste of {{ restaurant.cuisine }} food at home</h2>
+            <h3 class="text-xl  mb-5">We proudly serve the following areas for pickup and delivery</h3>
+        </div>
+        <div class="my-12 grid grid-cols-1 text-center  md:grid-cols-3 gap-4">
+            <div>
+                <p class="text-lg font-semibold">
+                    <a href="/{{ restaurant.urlCuisine }}-food-{{ restaurant.servingCity1Url }}">{{ restaurant.servingCity1 }}</a>
+                </p>
+            </div>
+            <div>
+                <p class="text-lg font-semibold">
+                    <a href="/{{ restaurant.urlCuisine }}-food-{{ restaurant.servingCity2Url }}">{{ restaurant.servingCity2 }}</a>
+                </p>
+            </div>
+            <div>
+                <p class="text-lg font-semibold">
+                    <a href="/{{ restaurant.urlCuisine }}-food-{{ restaurant.servingCity3Url }}">{{ restaurant.servingCity3 }}</a>
+                </p>
+            </div>
+            <div>
+                <p class="text-lg font-semibold">
+                    <a href="/{{ restaurant.urlCuisine }}-food-{{ restaurant.servingCity4Url }}">{{ restaurant.servingCity4 }}</a>
+                </p>
+            </div>
+            <div>
+                <p class="text-lg font-semibold">
+                    <a href="/{{ restaurant.urlCuisine }}-food-{{ restaurant.servingCity5Url }}">{{ restaurant.servingCity5 }}</a>
+                </p>
+            </div>
+            <div>
+                <p class="text-lg font-semibold">
+                    <a href="/{{ restaurant.urlCuisine }}-food-{{ restaurant.servingCity6Url }}">{{ restaurant.servingCity6 }}</a>
+                </p>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="/{{ restaurant.urlCuisine }}-food-order-online" class="btn-primary inline-block shadow-lg">Order Now</a>
+        </div>
+    </div>
+</section>
+
+{# review widget section #}
+
+{% include "partials/review.njk" %}

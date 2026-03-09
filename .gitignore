@@ -1,0 +1,4 @@
+_site
+.netlify
+netlify/edge-functions/_generated
+node_modules

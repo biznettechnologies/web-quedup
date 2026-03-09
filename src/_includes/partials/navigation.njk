@@ -1,0 +1,55 @@
+{# https://tailwindcss.com/docs/hover-focus-and-other-states#styling-based-on-parent-state #}
+
+{% set navPages = collections.all | eleventyNavigation %}
+
+{% macro renderNavListItem(entry) -%}
+  {% set active = entry.url == page.url %}
+  <li class="group key-{{entry.key}} relative {% if active %}nav-active{% endif %} py-4 md:py-2 md:px-3" >
+    <a href="{{ entry.url }}" class="nav-item text-base block uppercase whitespace-nowrap text-black hover:opacity-[0.8] {% if active %}underline{% endif %} {% if entry.key == "Order" %}btn-primary px-5{% endif %} {% if entry.children.length %}hidden md:block{% endif %}">
+      {{ entry.title }}
+    </a>
+    {%- if entry.children.length -%}
+      <ul class="text-bgaccent-800 rounded-md group-hover:block md:hidden md:absolute md:top-[100%] md:right-0 md:bg-bgaccent-700 md:text-bgaccent-300  md:text-sm md:p-2">
+        {%- for child in entry.children %}{{ renderNavListItem(child) }}
+        {% endfor -%}
+    </ul>
+  {%- endif -%}
+</li>
+{%- endmacro %}
+
+<header class="shadow-sm bg-gray-100 relative z-[9999] p-0 md:py-3">
+<nav class="max-w-screen-xl mx-auto text-lg md:space-x-6 flex justify-between md:items-center relative">
+  <div class="logo p-2 pl-4 flex flex-col items-start justify-center">
+    <a href="/index">
+      <img src="{{ restaurant.logo }}" width="100px" alt="logo-image">
+    </a>
+  </div>
+  <button class="p-4 block md:hidden" id="open" onclick="openNav()">
+    <div class="line h-[2px] rounded-md w-[25px] mx-auto  bg-brand mb-3"></div>
+    <div class="line h-[2px] rounded-md w-[50px] bg-brand mb-3"></div>
+    <div class="line h-[2px] rounded-md w-[25px] mx-auto  bg-brand"></div>
+  </button>
+
+  <div id="menu" class="transition ease-in duration-300 w-[100vw] translate-x-[-100%] fixed top-0 h-[100vh] p-0 flex flex-col items-center justify-center bg-bgaccent-50 mx-0 left-0 overflow-hidden md:static md:w-full md:h-auto md:bg-transparent md:translate-x-0 md:items-end md:overflow-visible">
+    <button id="close" class="block md:hidden absolute top-[25px] right-[25px] bg-transparent shadow-none border-2 border-solid border-black rounded-[50px] w-[40px] h-[40px]" onclick="closeNav()">
+      <div class="cross text-[20px] text-black">X</div>
+    </button>
+    {# {% for item in collections.page %}
+        <a href="{{ item.url }}"
+        {% if item.url == page.url %}
+          aria-current='page' data-state='active'
+        {% endif %}
+        class="nav-item hover:text-red-400 px-4 {% if item.url == page.url %}underline{% endif %}"
+        >{{ item.data.title }}</a>
+      {% endfor %}
+
+      <a href="/order-a" class="btn-primary">Order Now</a> #}
+
+    <ul class="flex flex-col md:flex-row md:flex-wrap items-center justify-center md:justify-end">
+      {%- for entry in navPages %}{{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+  </div>
+
+</nav>
+</header>

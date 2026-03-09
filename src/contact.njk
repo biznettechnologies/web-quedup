@@ -1,0 +1,61 @@
+---
+layout: base
+title: "Contact"
+description: add seo description
+tags: page
+order: 2
+eleventyNavigation:
+  key: Contact
+  order: 2
+---
+
+{# contact page section #}
+
+<section id="contact" class="">
+    <div class="max-w-screen-xl mx-auto w-full px-6 py-16">
+        <div class="flex flex-col gap-7 md:flex-row md:flex-wrap">
+            <div class="flex-1">
+                <div class="hours mb-10">
+                    <h3 class="text-3xl mb-4 font-bold">Hours</h3>
+                    <p class="text-lg mb-3">
+                        <strong>Sun - Sat:</strong> 11:00 am - 9:00 pm<br/>
+                        <strong>Mon:</strong> Closed
+                        </p>
+                </div>
+                <div class="contact mb-10">
+                    <h3 class="text-3xl mb-4 font-bold">Contact</h3>
+                    <p class="text-lg mb-3">
+                        <strong>Address:</strong>
+                        {{ restaurant.address }}
+                    </p>
+                    <p class="text-lg mb-10">
+                        <strong>Phone:</strong>
+                        <a href="tel:{{ restaurant.phone }}">{{ restaurant.phone }}</a>
+                    </p>
+                </div>
+
+                <div class="">
+                    <a href="/{{ restaurant.urlCuisine }}-food-order-online" class="btn-primary inline-block shadow-lg">Order Now</a>
+                </div>
+            </div>
+
+            <div class="flex-1">
+                <div class="map md:block h-96">
+                    <iframe
+              class="rounded-2xl"
+              src="{{ restaurant.googleMapembedUrl }}"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</section>
