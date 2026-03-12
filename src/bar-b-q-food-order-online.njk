@@ -1,7 +1,7 @@
 ---
 layout: base
-title: Order online - Bar-B-Q - Pleasant View, TN - Que'd Up 615
-description: Place your order online for Bar-B-Q food from Que'd Up 615. Located in Pleasant View, TN we offer authentic Bar-B-Q dishes. We serve customers in Pleasant View, TN, Coopertown, TN, Oaklawn, TN, Gause, TN, and Poplar Ridge, TN.
+title: Choose Service - Bar-B-Q - Pleasant View, TN - Que'd Up 615
+description: Choose pickup or delivery and start your order from Que'd Up 615 in Pleasant View, TN.
 tags: order_page
 order: 6
 eleventyNavigation:
@@ -12,94 +12,22 @@ eleventyNavigation:
 
 <section>
   <div class="max-w-screen-xl mx-auto w-full px-3 py-16">
+    <h2 class="my-5 text-center font-bold text-2xl">Choose Order Type</h2>
 
-    <div id='zuppler-menu'
-    role="main"
-    data-channel-url="http://api.zuppler.com/v3/channels/0f338541yum.json"
-    data-integration='8d18957d'
-    data-restaurant-id='32765'
-    data-app-url="/bar-b-q-food-order-online" 
-    data-colors-background='#ffffff'
-    data-colors-highContrast='#000000'
-    data-colors-midContrast='#333333'
-    data-colors-lowContrast='#999999'
-    data-colors-brand='#e97425'
-    data-colors-heroBackground='#9e5375'
-    data-colors-heroContrast='#FFFFFF'
-    data-fonts-heading='Sora, helvetica, sans-serif'
-    data-fonts-body='Sora, helvetica, sans-serif'
-    data-fonts-deco='Sora, helvetica, sans-serif'>
-
-      {% edge %}
-
-      {% macro item(i) %}
-        <li class="p-2 border-solid border-slate-400 border">
-          <p class="text-lg">{{ i.name }}</p>
-          <span class='item-description'>{{ i.description }}</span>
-        </li>
-      {% endmacro %}
-
-      {% macro category(c) %}
-        <h3 class="text-2xl font-bold">{{ c.name }}</h3>
-        <ul class="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {% for i in c.items %}
-            {{ item(i) }}
-          {% endfor %}
-      </ul>
-    {% endmacro %}
-
-    {% macro menu(m) %}
-      <h2 class="text-3xl font-bold">{{ m.name }}</h2>
-      {% for c in m.categories %}
-        {{ category(c) }}
-      {% endfor %}
-    {% endmacro %}
-
-    {% if appData.restaurantInfo %}
-      <h1>{{appData.restaurantInfo.name | safe}}</h1>
-      <p>Cuisines: {{appData.restaurantInfo.cuisines}}</p>
-      <p>Address: {{appData.restaurantInfo.locations[0].address.nickname}}</p>
-    {% endif %}
-
-    {% if appData.menus %}
-      {% for m in appData.menus %}
-        {{ menu(m) }}
-      {% endfor %}
-    {% endif %}
-
-    {% if appData.restaurants %}
-      <div class="flex flex-col items-center justify-center pt-10">
-        <h1>Restaurants</h1>
-        {% for r in appData.restaurants %}
-          <div>
-             <a href="/index/restaurants/{{r.integrations[0].remote_id}}/{{r.id}}">
-              <strong>{{ r.name | safe }}</strong> - {{r.locations[0].address.nickname}} - {{r.cuisines}}
-            </a>
-          </div>
-        {% endfor %}
+    <div class="flex flex-col md:flex-row md:flex-wrap md:justify-center items-center md:items-end gap-12 my-10">
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <a href="/bar-b-q-food-order-online-pickup">
+          <img src="{{ restaurant.logo }}" alt="Que'd Up 615 Pickup" class="w-[200px]">
+        </a>
+        <a class="btn-primary self-center mb-auto items-end inline-block text-center" href="/bar-b-q-food-order-online-pickup">Order Pickup</a>
       </div>
-    {% endif %}
 
-    {% endedge %}
-
+      <div class="flex flex-col gap-6 items-center justify-center">
+        <a target="_blank" rel="noopener noreferrer" href="https://premiumfooddelivery.org/index/restaurants/ee0bf191/32731">
+          <img src="https://premiumfooddelivery.org/images/round_logo.png" alt="Premium Food Delivery" class="w-[200px]">
+        </a>
+        <a class="btn-primary self-center inline-block text-center" target="_blank" rel="noopener noreferrer" href="https://premiumfooddelivery.org/index/restaurants/ee0bf191/32731">Order Delivery</a>
+      </div>
+    </div>
   </div>
-  <script>
-    zupplerBridge = null
-
-    function initZupplerBridge(api) {
-      zupplerBridge = api
-      api.addIntegrationStateListener(onIntegrationChanged)
-      return Promise.resolve(true)
-    }
-    function onIntegrationChanged(type, params) {
-      console.log("BSDBG: integrationChanged", type, params)
-      if (type === "menu:view" || type === "item:view") {
-        document.title = "{{ site.name }} - Order " + params.name
-      }
-    }
-  </script>
-  <script type="text/javascript" src="//web5.zuppler.com/common.js"></script>
-  <script type="text/javascript" src="//web5.zuppler.com/order.js"></script>
-
-</div>
 </section>

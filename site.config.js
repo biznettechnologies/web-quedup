@@ -3,7 +3,7 @@ export default {
 
   orderPages: [
     {
-      url: "/bar-b-q-food-order-online",
+      url: "/bar-b-q-food-order-online-pickup",
       channel: "0f338541yum",
       restaurantPermalink: "8d18957d",
       restaurantID: 32765,

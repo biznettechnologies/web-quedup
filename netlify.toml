@@ -3,8 +3,8 @@
   command = "npm run build"
 
 [[redirects]]
-  from = "/bar-b-q-food-order-online/*"
-  to = "/bar-b-q-food-order-online"
+  from = "/bar-b-q-food-order-online-pickup/*"
+  to = "/bar-b-q-food-order-online-pickup"
   status = 200
   force = true
 
